@@ -116,9 +116,8 @@ $(document).ready(function () {
 
     $('.edit').on('click', function () {
         $child = $(this).parents('.table__body--row').children('td');
-        console.log($child.eq(0).text());
 
-        $('input').addClass('active');
+        $('#editModal input').addClass('active');
 
         $('#editName').val($child.eq(1).text());
         $('#editage').val($child.eq(2).text());
