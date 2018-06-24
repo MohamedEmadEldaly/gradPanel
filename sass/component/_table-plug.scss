@@ -1,0 +1,82 @@
+/*tables plug*/
+div.dataTables_wrapper{
+    div.dataTables_filter input{
+        border:1px solid $sub-para;
+        padding: 5px 10px;
+        &:focus{
+            outline: none;
+        }
+    }
+    div.dataTables_filter label{
+        color:$notify;
+        
+    }
+    .dataTables_length{
+        float: left;
+
+        label{
+            color:$notify;
+        }
+    }
+
+    div.dataTables_length select{
+        padding: 5px 10px;
+        &:focus{
+            outline: none;
+        }
+    }
+    .dataTables_filter{
+        margin-top: 25px;
+        @media(max-width: 500px){
+            position: relative;
+            text-align: left;
+        }
+
+       
+    }
+    .dataTables_info{
+        float: left;
+        margin-right: 15px;
+    }
+
+    .dataTables_paginate{
+
+        margin: 0;
+        white-space: nowrap;
+        text-align: right;
+        font-size: 20px;
+
+        .paginate_button.previous{
+            margin-right: 10px;
+        }
+        .paginate_button.next{
+            margin-left: 10px;
+        }
+        .paginate_button{
+            cursor: pointer;
+            text-decoration: none;
+        }
+        span{
+            a{
+                margin-right: 5px;
+                cursor: pointer;
+
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+
+        div.dataTables_filter{
+            @media(max-width:500px){
+                text-align: left;
+            }
+        }
+    }
+}
+div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter, div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate{
+    @media(max-width:500px){
+        text-align: left;
+    }
+}
+/*tables plug*/

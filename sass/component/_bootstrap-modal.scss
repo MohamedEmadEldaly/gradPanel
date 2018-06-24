@@ -1,0 +1,152 @@
+/*bootstrap modal*/
+.modal{
+    &-title{
+
+        span.fas{
+            margin-right: 10px;
+            color:$notify;
+        }
+    }
+
+    .datepicker1{
+        margin-top: 6px;
+        margin-bottom: 20px;
+    }
+
+   
+
+    /*form*/
+    .form-group{
+        position: relative;
+        margin-bottom: 20px;
+        .forget,
+        .register,
+        .backtolog{
+            text-decoration: none;
+            color:#337ab7;
+            transition:color .5s ;
+
+            &:hover{
+                color:$notify;
+            }
+        }
+        input[type="email"],
+        input[type="password"],
+        input[type="checkbox"],
+        input[type="text"]{
+            padding: 10px 10px;
+            display: block;
+            padding-left: 29px;
+            width: 90%;
+            margin: auto;
+            &:focus{
+                outline: none;
+            }
+            border:none;
+            border-bottom: 1px solid #ebebeb;
+            transition: border .5s;
+
+        }
+
+        label.special{
+            position: absolute;
+            left: 44px;
+            top: 14px;
+            font-size: 13px;
+            color: #afafaf;
+            font-weight: 100;
+            text-transform: uppercase;
+            transform: translateY(0);
+            transition: transform .5s;
+
+        }
+
+        span.icon{
+            position: absolute;
+            left: 20px;
+            top: 13px;
+            font-size: 17px;
+            color:$notify;            
+        }
+
+        input.active + label {
+            transform: translateY(-20px);
+            color: $notify;
+        }
+        input.active{
+            border-bottom: 1px solid $notify;
+        }
+        /*custom check box*/
+        .custom-check{
+            opacity: 0;
+        }
+        .custom-span{
+            position: relative;
+            left: 15px;
+            &::before{
+                content: "\e157";
+                font-family: 'Glyphicons Halflings';
+                margin-right: 10px;
+                font-size: 15px;
+                position: absolute;
+                top: -3px;
+                left: -18px;
+                color:$notify;
+            }
+        }
+        .custom-check:checked + span:before{
+            content: "\e067";
+        }
+
+        .custom-label{
+            padding-left: 20px;
+            cursor: pointer;
+            @media(max-width:350px){
+                padding-left: 10px;
+            }
+
+            span{
+                font-size: 12px;
+                color: #afafaf;
+                font-weight: 100;
+                text-transform: uppercase;
+
+                @media(max-width:350px){
+                    font-size: 11px;
+                }
+            }
+        }
+
+        input[type="submit"]{
+            padding: 10px 50px;
+            border:none;
+            background: $notify;
+            color:#FFF;
+            font-size: 15px;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            transition: background .5s,
+            transform .5s;
+            &:hover{
+                background: $notify;
+                transform: scale(1.05);
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+        .rest_heading{
+            text-align: center;
+            margin-top: 50px;
+            text-transform: uppercase;
+            color: #969696;
+        }
+
+    }
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+    width:100%;
+    margin-bottom: 20px;
+}
+/*bootstrap modal*/

@@ -1,0 +1,361 @@
+/*dashboard navigation*/
+.rale{
+    font-family: 'Raleway', sans-serif;
+}
+.header{
+    position: fixed;
+    width:100%;
+    z-index: 200;
+    background: $white;
+    box-shadow: $shadow;
+
+    /*dashnav*/
+    .dashnav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__header{
+            padding-left: 10px;
+            display: flex;
+            align-self: stretch;
+            flex-grow: 1;
+            @media (min-width:768){
+                width:240px;
+                flex-shrink: 0;
+            }
+            .logo{
+                width:80px;
+                display: flex;
+                align-items: center;
+                @media (max-width:500px){
+                    width:100px;
+                }
+                @media (max-width:400px){
+                    display: none;
+                }
+                img{
+                    max-width: 100%;
+                }
+            }
+            .navButton{
+                width:40px;
+                height: 40px;
+                margin-left: 25px;
+                margin-top:15px;
+                padding: 10px;
+                cursor: pointer;
+                @media (max-width:500px) {
+                    margin-left: 10px;
+                    padding: 5px;
+                }
+
+                @media(min-width:768px){
+                    display: none;
+                }
+
+               
+                span{
+                    display: block;
+                    transition: background .5s;
+                    margin-bottom: 4px;
+                    width:20px;
+                    height: 2px;
+                    background: $gray-2;
+                }
+                &:hover span {
+                    background: $gray;
+                }
+            }
+            .navButton.active{
+                span{
+                    background: $gray;
+                }
+            }
+
+        }
+    }
+    /*dashnav*/
+
+    
+    /*top nav*/
+    .topnav{
+        display: flex;
+        align-self: stretch;
+        justify-content: flex-end;
+        flex-grow:5;
+
+        ol, ul{
+            margin-bottom: 0;
+        }
+
+        &__list{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            align-self: stretch;
+            padding-right: 10px;
+            .listItem{
+                display: flex;
+                width: 50px;
+
+
+                /*internal ul*/
+                
+                
+                .dropDown{
+                    position: absolute;
+                    background: #FFF;
+                    box-shadow: $shadow;
+                    display: flex;
+                    flex-direction: column;
+                    width:270px;
+                    right:0;
+                    top:-500px;
+                    border:$border;
+                    list-style: none;
+                    transition: all .4s ease-in;
+                    padding: 0;
+
+                    .message-container,
+                    .notification-container{
+                        height: 150px;
+                        overflow-y: scroll;
+                    }
+                    
+                    .notification-heading h3{
+                        text-transform: capitalize;
+                        padding: 10px 15px;
+                        margin: 0;
+                        font-size: 18px;
+                    }
+
+                    .seeall{
+                        display: block;
+                        padding: 10px 15px;
+                        text-transform: capitalize;
+                        text-decoration: none;
+                    }
+                    /*internal li*/
+                    .dropDown__list{
+                        border-bottom:$border;
+                        display: flex;
+                        padding: 10px;
+                        overflow: hidden;
+                        cursor: pointer;
+                        background: $white;
+                        transition: background .5s;
+                        &:hover{
+                           background: $light-gray;
+                        }
+                        &:hover .downlink{
+                            color:$dark-gray;
+                        }
+
+                        /*user space*/
+                        .user-space{
+                            display: flex;
+                            align-items: center;
+                            span{
+                                display: block;
+                            }
+
+                            .user-img{
+                                width:50px;
+                                img{
+                                    max-width: 100%;
+                                    border-radius: 50%;
+                                }
+                            }
+
+                            .user-info{
+                                margin-left: 10px;
+                                .user-name{
+                                    color:#455a64;
+                                }
+                                .user-email{
+                                    font-size: 10px;
+                                    color:#99abb4;
+                                }
+                            }
+                        }
+                        /*user space*/
+                        .downlink{
+                            display: flex;
+                            text-decoration: none;
+                            color:$gray-2;
+                            transition:color .5s;
+                            .list-icon{
+                                margin-right:10px;
+                            }
+                        }
+
+                        /*message*/
+                        .message_number{
+                            margin: auto;
+                            h3{
+                                font-size: 17px;
+                                text-transform: capitalize;
+                                span{
+                                    background: #455a64;
+                                    color:#FFF;
+                                    display: inline-block;
+                                    width: 25px;
+                                    height: 25px;
+                                    text-align: center;
+                                    border-radius: 50%;
+                                    padding-top:2px;
+                                }
+                            }
+                        }
+
+                        .sender-img{
+                            width:50px;
+                            img{
+                                max-width: 100%;
+                                border-radius: 50%;
+                            }
+                        }
+                        .sender-info{
+                            margin-left: 15px;
+                            p{
+                                margin-bottom: 0;
+                            }
+
+                            .sender-name{
+                                font-size: 15px;
+                                color:$light-dark;
+                            }
+                            .sender-text{
+                                font-size: 12px;
+                                color:$light-gray-2;
+                            }
+                            .sender-time{
+                                font-size: 11px;
+                                color:$light-gray-2;
+                            }
+                        }
+                        /*message*/
+
+                        /*notification*/
+                        .notification-img{
+                            width:50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            background: $notify;
+                            text-align: center;
+                            padding-top: 15px;
+                            color:#FFF;
+                            img{
+                                max-width: 100%;
+                            }
+                        }
+                        .notification-info{
+                            margin-left: 15px;
+                            p{
+                                margin-bottom: 0;
+                            }
+
+                            .notification-name{
+                                font-size: 15px;
+                                color:$light-dark;
+                            }
+                            .notification-text{
+                                font-size: 12px;
+                                color:$light-gray-2;
+                            }
+                            .notification-time{
+                                font-size: 11px;
+                                color:$light-gray-2;
+                            }
+                        }
+
+                    }
+                }
+
+                .dropDown.active{
+                    top:57.25px;
+                }
+                
+                .dropDown.search-control{
+                    height: 100%;
+                    top: 0;
+                    z-index: 51;
+                    width: 100%;
+                    box-shadow: none;
+                    border:none;
+                    display: none;
+                    .search-form{
+                        position: relative;
+                    }
+                    input{
+                        width: 90%;
+                        padding: 11.5px;
+                        font-size: 20px;
+                        border:none;
+
+                        @media (max-width:500px){
+                            width:80%;
+                        }
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+
+                    span{
+                        font-size: 20px;
+                        top: 19px;
+                        right: 20px;
+                        color: #a6b7bf;
+                        position: absolute;
+                        cursor: pointer;
+                    }
+                }
+                @media(min-width: 500px){
+                    .dropDown.notification-control{
+                        right:110px;
+                    }
+                    .dropDown.user-control{
+                        right:10px;
+                    }
+                    .dropDown.message-control{
+                        right:60px;
+                    }
+                    
+                }
+                /*internal ul*/
+
+
+
+
+            }
+
+            a.list-link{
+                display: block;
+                color:$gray-2;
+                transition: color .5s,
+                background .5s;
+                align-self: stretch;
+                width:100%;
+                text-align: center;
+
+                &:hover{
+                    color:$dark-gray;color:$dark-gray;
+                    background: rgba(0,0,0,.05);
+                }
+                span{
+                    margin-top: 20px;
+                    font-size: 20px;
+                }
+                img{
+                    border-radius: 50%;
+                    max-width: 35px;
+                    margin-top: 9px;
+                }
+            }
+        }
+    }
+    /*top nav*/
+
+}
+/*dashboard navigation*/

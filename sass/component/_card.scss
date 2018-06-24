@@ -1,0 +1,88 @@
+/*card style*/
+.card{
+    position: relative;
+    margin-bottom: 25px;
+
+    &__link{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__counter{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        padding-bottom: 30px;
+
+        .counterIcon{
+
+            .fas.plane{
+                transform: rotate(-90deg);
+                
+            }
+            .fas{
+                color: #FFF;
+                font-size: 35px;
+
+                @media(max-width: 1010px) and (min-width: 992px){
+                    font-size: 29px;
+                }
+            }
+        }
+
+        .counterInfo{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color:#FFF;
+            .number{
+                font-size: 22px;
+            }
+            .type{
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__go{
+        position: absolute;
+        bottom: 0;
+        left:0;
+        right:0;
+        height: 25px;
+        background: rgba(0,0,0,.2);
+        padding-left:10px;
+        padding-right: 10px;
+
+        .card_name{
+            color:#FFF;
+        }
+        .arrow{
+            text-align: right;
+            color: #FFF;
+            position: absolute;
+            right: 15px;
+            top: 5px;
+        }
+    }
+
+    &--yellow{
+        background: $yellow;
+    }
+
+    &--blue{
+        background: #01b7f2;
+    }
+
+    &--red{
+        background: #e01a33;
+    }
+
+    &--green{
+        background: #98ce44;
+    }
+}
+/*card style*/

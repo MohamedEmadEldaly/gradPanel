@@ -1,0 +1,59 @@
+/*home page*/
+.main-wrapper{
+    background: $mainBg;
+    .mainContent{
+        position: relative;
+    }
+    .pageContent{
+        position: absolute;
+        left:240px;
+        top:56.25px;
+        background: $mainBg;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        width: calc(100% - 240px);
+        color:#000;
+        transition: all .5s;
+        @media(max-width: 767px){
+            left: 0;
+            width:100%;
+        }
+        /*dash board content first page*/
+        .dashboard{
+
+            .welcome-message{
+                margin-bottom: 50px;
+                h3,p{
+                    cursor: pointer;
+                    color:$notify;
+                }
+                h3{
+                    font-size: 20px;
+                }
+                p{
+                    color:$gray;
+                    font-size: 13px;
+                }
+            }
+
+            .table-search{
+                background: #FFF;
+                box-shadow: $shadow;
+                padding:20px;
+                border-radius: 5px;
+                .search-filters{
+                    display: flex;
+                }
+
+                .datepicker{
+                    width:60%;
+                }
+            }
+            
+
+        }
+
+
+    }
+}
+/*home page*/

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Dashboard</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--datatables-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.0/css/buttons.bootstrap.min.css">
+    <link rel="stylesheet"href="https://cdn.datatables.net/select/1.2.4/css/select.bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <!--styles-->
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--font awesome-->
+	<link rel="stylesheet" href="css/fontawesome.min.css">
+	<link rel="stylesheet" href="css/fa-solid.min.css">
+	<link rel="stylesheet" href="css/fa-brands.min.css">
+    <!--load google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!--add modal-->
+    <div class="modal fade rale" tabindex="-1" role="dialog" id="addModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span class="fas fa-clock"></span>Adding Appointment</h4>
+            </div>
+            <!--modal body-->
+            <div class="modal-body">
+
+                <div class="row">
+                    <!--col-->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                                <span class="icon glyphicon glyphicon-user
+                                "></span>
+                                <input type="text" id="fname" required>
+                                <label for="fname" class="special">First Name</label>
+                        </div><!--form group-->
+                    </div>
+                    <!--col-->
+
+                    <!--col-->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                                <span class="icon glyphicon glyphicon-user
+                                "></span>
+                                <input type="text" id="lname" required>
+                                <label for="lname" class="special">Last Name</label>
+                        </div><!--form group-->
+                    </div>
+                    <!--col-->
+                </div>
+
+                <div class="row">
+                    <!--col-->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                                <span class="icon fas fa-child
+                                "></span>
+                                <input type="text" id="age" required>
+                                <label for="age" class="special">Age</label>
+                        </div><!--form group-->
+                    </div>
+                    <!--col-->
+
+                    <!--col-->
+                    <div class="col-sm-6">
+                        <div class="">
+                            <div class="datepicker1 input-group date">
+                                        <input type="text" class=" form-control" placeholder="appointment Date" required>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar
+                                            "></span>
+                                        </div>
+                            </div>
+                        </div><!--form group-->
+                    </div>
+                    <!--col-->
+                </div>
+
+                <div class="row">
+                    <!--col-->
+                    <div class="col-sm-6">
+                        <select class="selectpicker1" id="selectpicker">
+                            <option>Status</option>
+                            <option>Checking</option>
+                            <option>Arrived</option>
+                            <option>Reserved</option>
+                        </select>
+                    </div>
+                    <!--col-->
+
+                    <!--col-->
+                    <div class="col-sm-6">
+                        <div class="">
+                            <select class="selectpicker2" id="selectpicker">
+                                <option>Appointment Number</option>
+                                <option>A1</option>
+                                <option>A2</option>
+                            </select>
+                        </div><!--form group-->
+                    </div>
+                    <!--col-->
+                </div>
+
+            </div>
+            <!--modal body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add Appointment</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!--add modals-->
+
+    <!--edit modal-->
+    <div class="modal fade rale" tabindex="-1" role="dialog" id="editModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span class="fas fa-edit"></span>Edit Appointment</h4>
+            </div>
+            <!--modal body-->
+            <div class="modal-body">
+
+                <div class="row">
+                    <!--col-->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                                <span class="icon glyphicon glyphicon-user
+                                "></span>
+                                <input type="text" id="editName" required>
+                                <label for="editName" class="special">patient Name</label>
+                        </div><!--form group-->
+                    </div>
+                    <!--col-->
+                </div>
+
+                <div class="row">
+                    <!--col-->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                                <span class="icon fas fa-child
+                                "></span>
+                                <input type="text" id="editage" required>
+                                <label for="editage" class="special">Age</label>
+                        </div><!--form group-->
+                    </div>
+                    <!--col-->
+
+                    <!--col-->
+                    <div class="col-sm-6">
+                        <div class="">
+                            <div class="datepicker3 input-group date">
+                                        <input type="text" class=" form-control" placeholder="appointment Date" required>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar
+                                            "></span>
+                                        </div>
+                            </div>
+                        </div><!--form group-->
+                    </div>
+                    <!--col-->
+                </div>
+
+                <div class="row">
+                    <!--col-->
+                    <div class="col-sm-6">
+                        <select class="selectpicker1" id="selectpicker">
+                            <option>Status</option>
+                            <option>Checking</option>
+                            <option>Arrived</option>
+                            <option>Reserved</option>
+                        </select>
+                    </div>
+                    <!--col-->
+
+                    <!--col-->
+                    <div class="col-sm-6">
+                        <div class="">
+                            <select class="selectpicker2" id="selectpicker">
+                                <option>Appointment Number</option>
+                                <option>A1</option>
+                                <option>A2</option>
+                            </select>
+                        </div><!--form group-->
+                    </div>
+                    <!--col-->
+                </div>
+
+            </div>
+            <!--modal body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--edit modals-->
+
+    <!--Delete modal-->
+     <div class="modal fade rale" tabindex="-1" role="dialog" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span class="fas fa-trash-alt"></span>Delete Appointment</h4>
+            </div>
+            <!--modal body-->
+            <div class="modal-body">
+
+                You Are going to Delete this Appointment. Are  you sure?
+                
+            </div>
+            <!--modal body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Delete</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--Delete modal-->
+
+    <!--start main wrapper-->
+    <div class="main-wrapper">
+
+        <!--header-->
+        <header class="header rale">
+
+            <!--start nav-->
+            <nav class="dashnav">
+                <!--dashNav Header-->
+                <div class="dashnav__header">
+                    <!--logo-->
+                    <div class="logo">
+                        <a href="#">
+                            <img src="images/logo3.png" alt="logo">
+                        </a>
+                    </div>
+                    <!--logo-->
+                    <!--navButton-->
+                    <div class="navButton">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <!--navButton-->
+                </div>
+                <!--dashNav Header-->
+
+
+
+
+                 <!--main navigation-->
+                <div class="topnav">
+                    <ul class="topnav__list">
+
+                        
+                        <!--notification-->
+                        <li class="listItem  notification">
+                            <a href="#" class="list-link">
+                                <span class="fas fa-bell
+
+                                "></span>
+                            </a>
+
+
+                            <!--notification control-->
+                            <ul class="dropDown notification-control">
+                                 <li class="dropDown__list">
+                                    <div class="notification-heading">
+                                        <h3>notifications</h3>
+                                    </div>
+                                </li>
+                               
+                                <!--notification container-->
+                                <div class="notification-container">
+                                   <li class="dropDown__list">
+                                        <div class="notification-img">
+                                            <span class="glyphicon glyphicon-bell
+                                            ">
+
+                                            </span>
+                                        </div>
+                                        <div class="notification-info">
+                                            <p class="notification-name">Launch admin</p>
+                                            <p class="notification-text">Hello, don't miss launch</p>
+                                            <p class="notification-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="dropDown__list">
+                                        <div class="notification-img">
+                                            <span class="glyphicon glyphicon-bell
+                                            ">
+
+                                            </span>
+                                        </div>
+                                        <div class="notification-info">
+                                            <p class="notification-name">Have a nice day</p>
+                                            <p class="notification-text">Hello, don't miss launch</p>
+                                            <p class="notification-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="dropDown__list">
+                                        <div class="notification-img">
+                                            <span class="glyphicon glyphicon-bell
+                                            ">
+
+                                            </span>
+                                        </div>
+                                        <div class="notification-info">
+                                            <p class="notification-name">Hello world!</p>
+                                            <p class="notification-text">Hello, don't miss launch</p>
+                                            <p class="notification-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+
+                                </div>
+                                <!--notification container-->
+                                <a href="" class="seeall">see all notifications</a>
+                            </ul>
+                            <!--notification control-->
+                        </li>
+                        <!--notification-->
+
+                        <!--message-->
+                        <li class="listItem message">
+                            <a href="#" class="list-link">
+                                <span class="fab fa-facebook-messenger
+                                "></span>
+                            </a>
+
+                            <!--message control-->
+                            <ul class="dropDown message-control">
+
+                                <li class="dropDown__list">
+                                    <div class="message_number">
+                                        <h3>you have <span>3</span> new meassges</h3>
+                                    </div>
+                                </li>
+
+                                <!--message-control-->
+                                <div class="message-container">
+                                    <li class="dropDown__list">
+                                        <div class="sender-img">
+                                            <img src="images/user.jpg" alt="sender">
+                                        </div>
+                                        <div class="sender-info">
+                                            <p class="sender-name">Ahmed Nabil</p>
+                                            <p class="sender-text">Hello, Mohamed</p>
+                                            <p class="sender-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="dropDown__list">
+                                        <div class="sender-img">
+                                            <img src="images/user.jpg" alt="sender">
+                                        </div>
+                                        <div class="sender-info">
+                                            <p class="sender-name">Ahmed Nabil</p>
+                                            <p class="sender-text">Hello, Mohamed</p>
+                                            <p class="sender-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="dropDown__list">
+                                        <div class="sender-img">
+                                            <img src="images/user.jpg" alt="sender">
+                                        </div>
+                                        <div class="sender-info">
+                                            <p class="sender-name">Ahmed Nabil</p>
+                                            <p class="sender-text">Hello, Mohamed</p>
+                                            <p class="sender-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+                                </div>
+                                <!--message container-->
+
+                                <a href="#" class="seeall">see all Messages</a>
+                               
+
+                            </ul>
+                            <!--message control-->
+
+                        </li>
+                        <!--message-->
+
+                        <!--user control-->
+                        <li class="listItem user-space">
+
+                            <a href="" class="list-link">
+                                <img src="images/user.jpg" alt="user">
+                            </a>
+
+                            <!--user control-->
+                            <ul class="dropDown user-control">
+
+                                <li class="dropDown__list">
+                                    <div class="user-space">
+                                        <div class="user-img">
+                                            <img src="images/user.jpg" alt="user">
+                                        </div>
+
+                                        <div class="user-info">
+                                            <span class="user-name">MohamedEmad</span>
+                                            <span class="user-email">MohamedEmad@gmail.com</span>
+                                        </div>
+                                    </div><!--user information-->
+                                </li>
+
+                                
+                                <li class="dropDown__list">
+                                    <a href="#" class="downlink">
+                                        <div class="list-icon">
+                                            <span class="icon glyphicon glyphicon-envelope
+                                            "></span>
+                                        </div>
+                                        <div class="text">
+                                            <span class="text-box">
+                                                Messages
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="dropDown__list">
+                                    <a href="#" class="downlink">
+                                        <div class="list-icon">
+                                            <span class="icon glyphicon glyphicon-cog
+
+                                            "></span>
+                                        </div>
+                                        <div class="text">
+                                            <span class="text-box">
+                                                Account Setting
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                
+                                <li class="dropDown__list">
+                                    <a href="#" class="downlink">
+                                        <div class="list-icon">
+                                            <span class="icon glyphicon glyphicon-off
+
+
+                                            "></span>
+                                        </div>
+                                        <div class="text">
+                                            <span class="text-box">
+                                                log out
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <!--user control-->
+                        </li>
+                    </ul>
+                </div><!--mainNav-->
+                <!--main navigation-->
+
+
+
+
+            </nav><!--nav-->
+            <!--end nav-->
+
+        </header><!--header-->
+        <!--header-->
+
+        <!--main content-->
+        <div class="mainContent">
+
+            <!--side menu-->
+            <aside class="sideMenu rale">
+                <!--user information-->
+                <div class="sideUser clearfix">
+                    <div class="sideImg">
+                        <img src="images/user.jpg" alt="userPhoto" draggable="false
+                        ">
+                    </div><!--user img-->
+                    <div class="userName">
+                        <p class="sideUname">MohamedEmad</p>
+                        <p class="sideUemail">mohamedemad201194@gmail.com</p>
+                    </div><!--user name-->
+                </div><!--side user-->
+                <!--user information-->
+
+                <!--sidebar nav-->
+                <ul class="sideList">
+                    <li class="sideList__item">
+                        <a href="#">
+                            <div class="sideIcon">
+                                <span class="listIcon fas fa-clock"></span>
+                            </div>
+                            <div>
+                                Appointments
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="sideList__item">
+                        <a href="#">
+                            <div class="sideIcon">
+                                <span class="listIcon fas fa-users"></span>
+                            </div>
+                            <div>
+                                Patients
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="sideList__item">
+                        <a href="#">
+                            <div class="sideIcon">
+                                <span class="listIcon fas fa-chart-line"></span>
+                            </div>
+                           <div>
+                            Statistics
+                           </div>
+                        </a>
+                    </li>
+
+                    <li class="sideList__item">
+                        <a href="#">
+                           <div class="sideIcon">
+                                <span class="listIcon fab fa-facebook-messenger"></span>
+                           </div>
+                           <div>
+                                Messages
+                           </div> 
+                        </a>
+                    </li>
+
+                    
+                    <li class="sideList__item">
+                        <a href="#">
+                            <div class="sideIcon">
+                                <span class="listIcon fas fa-user-circle"></span>
+                            </div>
+                            <div>
+                                Profile Setting
+                            </div>
+                        </a>
+                    </li>
+
+                    
+                    
+                </ul>
+                <!--sidebar nav-->
+
+
+            </aside>
+            <!--end side menu-->
+
+            <!--pageContent-->
+            <div class="pageContent rale">
+                <div class="container-fluid">
+
+                    <!--dashboard-->
+                    <div class="dashboard">
+
+                       <!--welcome message-->
+                       <div class="welcome-message">
+                            <h3>Hello Dr <span class="welcome_user">MohamedEmad</span>, welcome!</h3>
+                            <p>
+                                All your Appointments are displayed here. Here you have the possibility to manage all Appointments.
+                            </p>
+                       </div>
+                       <!--welcome message-->
+
+                        <!--control row-->
+                        <div class="table-search">
+                             <div class="row">
+                                
+                                <!--col-->
+                                <div class="col-sm-6">
+                                    <div class="search-filters">
+                                        <button class="custom-button custom-button--blue">Today</button>
+
+                                        <div class="datepicker input-group date">
+                                                <input type="text" class=" form-control" placeholder="Search by Date" required>
+                                                <div class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar
+                                                    "></span>
+                                                </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--col-->
+
+                                <!--col-->
+                                <div class="col-sm-6 custom-align">
+                                    <button class="add-appoint custom-button custom-button--blue">
+                                        Add Appointment <span class="fas fa-clock"></span>
+                                    </button>
+                                </div>
+                                <!--col-->
+
+
+                             </div><!--row-->
+                        </div><!--table search-->
+                       
+                        <!--control row-->
+                       
+                        <!--table row-->
+                        <!--row-->
+                        <div class="row">
+                            <!--order space-->
+                            <div class="order-space">
+
+                                <!--col-->
+                                <div class="col-xs-12">
+                                    <!--order card-->
+                                    <div class="orderCard">
+
+                                        <!--order head-->
+                                        <div class="order-head">
+                                            <h3 class="order-heading">Your Appointment</h3>
+                                            <p class="order-paragraph">here your active Appointment </p>
+                                        </div>
+
+                                        <!--order data-->
+                                        <div class="order-data">
+
+
+
+                                            <!--table head-->
+                                            <table class="table table-hover  daTatable dataTable demo-foo-filtering" id="demo-foo-filtering">
+
+                                                <!--table head-->
+                                                <thead class="table__header">
+                                                    <tr class="table__header--row">
+                                                        <th>Appointment No</th>
+                                                        <th>Patient Name</th>
+                                                        <th>Age</th>
+                                                        <th>Appointment Date</th>
+                                                        <th>Status</th>
+                                                        <th>Operations</th>
+                                                    </tr>
+                                                </thead>
+                                                <!--table head-->
+
+
+                                                <!--table body-->
+                                                <tbody class="table__body">
+
+                                                    <tr class="table__body--row">              
+
+                                                        <td class="car-head">
+                                                            <span class="fas fa-clock">
+
+                                                            </span> A1
+                                                        </td>
+                                                        <td>MohamedAhmed</td>
+                                                        <td>23</td>
+                                                        <td>07/10/2018</td>
+                                                        <td>checking</td>
+                                                        <td class="operation">
+                                                            <button class="btn btn-danger btn-xs delete">
+                                                                Delete <span class="fas fa-trash-alt"></span>
+                                                            </button>
+                                                            <button class="btn btn-success edit btn-xs">
+                                                                Edit <span class="fas fa-edit"></span>
+                                                            </button>
+                                                        </td>
+                                                        
+                                                    </tr>
+
+                                                    <tr class="table__body--row">              
+
+                                                        <td class="car-head">
+                                                            <span class="fas fa-clock"></span>A2 
+                                                        </td>
+                                                        <td>MostafaAhmed</td>
+                                                        <td>25</td>
+                                                        <td>07/10/2018</td>
+                                                        <td>Arrived</td>
+                                                        <td class="operation">
+                                                            <button class="btn btn-danger btn-xs delete">
+                                                                Delete <span class="fas fa-trash-alt"></span>
+                                                            </button>
+                                                            <button class="btn btn-success edit btn-xs">
+                                                                Edit <span class="fas fa-edit"></span>
+                                                            </button>
+                                                        </td>
+                                                        
+                                                    </tr>
+
+                                                    <tr class="table__body--row">              
+
+                                                        <td class="car-head">
+                                                            <span class="fas fa-clock">
+
+                                                            </span> A1
+                                                        </td>
+                                                        <td>khaledAhmed</td>
+                                                        <td>27</td>
+                                                        <td>07/10/2018</td>
+                                                        <td>Arrived</td>
+                                                        <td class="operation">
+                                                            <button class="btn btn-danger btn-xs delete">
+                                                                Delete <span class="fas fa-trash-alt"></span>
+                                                            </button>
+                                                            <button class="btn btn-success edit btn-xs">
+                                                                Edit <span class="fas fa-edit"></span>
+                                                            </button>
+                                                        </td>
+                                                        
+                                                    </tr>
+
+                                                    <tr class="table__body--row">              
+
+                                                        <td class="car-head">
+                                                            <span class="fas fa-clock">
+
+                                                            </span> A4
+                                                        </td>
+                                                        <td>Ahmedmohamed</td>
+                                                        <td>23</td>
+                                                        <td>07/10/2018</td>
+                                                        <td>Arrived</td>
+                                                        <td class="operation">
+                                                            <button class="btn btn-danger btn-xs delete">
+                                                                Delete <span class="fas fa-trash-alt"></span>
+                                                            </button>
+                                                            <button class="btn btn-success edit btn-xs">
+                                                                Edit <span class="fas fa-edit"></span>
+                                                            </button>
+                                                        </td>
+                                                        
+                                                    </tr>
+
+                                                    <tr class="table__body--row">              
+
+                                                        <td class="car-head">
+                                                            <span class="fas fa-clock">
+
+                                                            </span> A5
+                                                        </td>
+                                                        <td>MariamAhmed</td>
+                                                        <td>23</td>
+                                                        <td>07/10/2018</td>
+                                                        <td>Arrived</td>
+                                                        <td class="operation">
+                                                            <button class="btn btn-danger btn-xs delete">
+                                                                Delete <span class="fas fa-trash-alt"></span>
+                                                            </button>
+                                                            <button class="btn btn-success edit btn-xs">
+                                                                Edit <span class="fas fa-edit"></span>
+                                                            </button>
+                                                        </td>
+                                                        
+                                                    </tr>
+
+                                                    <tr class="table__body--row">              
+
+                                                        <td class="car-head">
+                                                            <span class="fas fa-clock">
+
+                                                            </span> A6
+                                                        </td>
+                                                        <td>MohamedAhmed</td>
+                                                        <td>23</td>
+                                                        <td>07/10/2018</td>
+                                                        <td>Arrived</td>
+                                                        <td class="operation">
+                                                            <button class="btn btn-danger btn-xs delete">
+                                                                Delete <span class="fas fa-trash-alt"></span>
+                                                            </button>
+                                                            <button class="btn btn-success edit btn-xs">
+                                                                Edit <span class="fas fa-edit"></span>
+                                                            </button>
+                                                        </td>
+                                                        
+                                                    </tr>
+
+                                                   
+                                                    
+                                                            
+                                                </tbody>
+                                                <!--table body-->
+
+                                            </table>
+                                            <!--table head-->
+
+                                            
+                                            
+
+                                        </div>
+
+                                    </div>
+                                    <!--order card-->
+
+                                </div>
+                                <!--col-->
+
+
+                                
+
+
+
+                            </div>
+                            <!--order space-->
+                        </div>
+                        <!--row-->
+                        <!--table row-->
+
+                    </div><!--dashboard-->
+
+                </div>
+            </div>
+            <!--pageContent-->
+
+
+        </div>
+        <!--main content-->
+
+    </div><!--main wrapper-->
+    <!--end main wrapper-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <!--tables-->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <scrip src="https://cdn.datatables.net/buttons/1.5.0/js/dataTables.buttons.min.js"></script>
+    <scrip src="https://cdn.datatables.net/select/1.2.4/js/dataTables.select.min.js"></script>
+    <scrip src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+    <scrip src="https://cdn.datatables.net/buttons/1.5.0/js/buttons.bootstrap.min.js"></script>
+    <script            src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js">
+    </script>
+    <!--main script-->
+    <script src="js/main.js"></script>
+  </body>
+</html>

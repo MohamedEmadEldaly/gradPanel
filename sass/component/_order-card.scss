@@ -1,0 +1,162 @@
+/*order card*/
+.order-space{
+    margin-top: 60px;
+
+
+
+    .orderCard{
+        background: #FFF;
+        width:100%;
+        box-shadow: $shadow;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 30px;
+
+        @media (max-width:970px) and (min-width:768px){
+            overflow-x: scroll;
+        }
+        @media (max-width:725px){
+            overflow-x: scroll;
+        }
+
+
+        /*order head*/
+        .order-head{
+            border-bottom:  1px solid rgba(0,0,0,.05);
+
+            h3.order-heading{
+                color:$dark-gray;
+                margin-top: 10px;
+                margin-bottom: 5px;
+                position: relative;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: -5px;
+                    left: -20px;
+                    height: 30px;
+                    width:2px;
+                    background: $notify;
+                }
+
+                
+            }
+            p.order-paragraph{
+                text-transform: capitalize;
+                color:$sub-para;
+            }
+        }
+        /*order head*/
+
+        /*order data*/
+        .table{
+
+
+            /*table header*/
+            &__header{
+
+                &--row{
+                    th{
+                        border-bottom:$border;
+                        color:$gray;
+                        cursor: pointer;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            /*table body*/
+
+            &__body{
+                
+                &--row{
+
+                    transition: background .5s;
+                    cursor: pointer;
+                    &:hover{
+                        background: #f3f3f3;
+                    }
+                    td{
+                        padding: 12px;
+                        padding-left: 8px;
+                        border-bottom: $border;
+                        vertical-align: middle;
+                        color:#455a64;
+                        border-top: none;
+
+                       
+                        .car-img{
+                            width:30px;
+                            height: 30px;
+                            float: left;
+                            margin-right: 10px;
+                            img{
+                                max-width: 100%;
+                                border-radius: 100%;
+                            }
+                            @media(max-width:1055px) and (min-width:1025px){
+                                float: none;
+                            }
+                            @media(max-width:780px) and (min-width:768px){
+                                float: none;
+                            }
+                            @media (max-width:550px){
+                                float: none;
+                            }
+                        }
+                        /*car details*/
+                        .car-details{
+                            float: left;
+                            @media(max-width:1055px) and (min-width:1025px){
+                                float: none;
+                            }
+                            @media(max-width:780px) and (min-width:768px){
+                                float: none;
+                            }
+                            @media (max-width:550px){
+                                float: none;
+                            }
+                                                   
+                        }
+                    }
+
+                    td.operation{
+                        button.btn{
+                            margin-bottom: 10px;
+                        }
+                        span.fas{
+                            margin-left: 10px;
+                        }                       
+                    }
+
+                    td.car-head{
+
+                        font-size: 18px;
+
+                        .fas{
+                            margin-right: 10px;
+                            color:$notify;
+                        }
+
+                        @media (max-width:1310px) and (min-width:1025px){
+                            width:200px;
+                        }
+                       
+                    }
+                    
+                    /*td*/
+                }
+            }
+
+            /*table body*/
+        }
+        /*order data*/
+
+
+    }
+
+
+
+}
+/*order card*/
