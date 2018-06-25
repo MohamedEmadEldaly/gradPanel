@@ -34,215 +34,7 @@
   </head>
   <body>
 
-    <!--add modal-->
-    <div class="modal fade rale" tabindex="-1" role="dialog" id="addModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><span class="fas fa-clock"></span>Adding Appointment</h4>
-            </div>
-            <!--modal body-->
-            <div class="modal-body">
-
-                <div class="row">
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                                <span class="icon glyphicon glyphicon-user
-                                "></span>
-                                <input type="text" id="fname" required>
-                                <label for="fname" class="special">First Name</label>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                                <span class="icon glyphicon glyphicon-user
-                                "></span>
-                                <input type="text" id="lname" required>
-                                <label for="lname" class="special">Last Name</label>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-                </div>
-
-                <div class="row">
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                                <span class="icon fas fa-child
-                                "></span>
-                                <input type="text" id="age" required>
-                                <label for="age" class="special">Age</label>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="">
-                            <div class="datepicker1 input-group date">
-                                        <input type="text" class=" form-control" placeholder="appointment Date" required>
-                                        <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar
-                                            "></span>
-                                        </div>
-                            </div>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-                </div>
-
-                <div class="row">
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <select class="selectpicker1" id="selectpicker">
-                            <option>Status</option>
-                            <option>Checking</option>
-                            <option>Arrived</option>
-                            <option>Reserved</option>
-                        </select>
-                    </div>
-                    <!--col-->
-
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="">
-                            <select class="selectpicker2" id="selectpicker">
-                                <option>Appointment Number</option>
-                                <option>A1</option>
-                                <option>A2</option>
-                            </select>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-                </div>
-
-            </div>
-            <!--modal body-->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add Appointment</button>
-            </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <!--add modals-->
-
-    <!--edit modal-->
-    <div class="modal fade rale" tabindex="-1" role="dialog" id="editModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><span class="fas fa-edit"></span>Edit Appointment</h4>
-            </div>
-            <!--modal body-->
-            <div class="modal-body">
-
-                <div class="row">
-                    <!--col-->
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                                <span class="icon glyphicon glyphicon-user
-                                "></span>
-                                <input type="text" id="editName" required>
-                                <label for="editName" class="special">patient Name</label>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-                </div>
-
-                <div class="row">
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                                <span class="icon fas fa-child
-                                "></span>
-                                <input type="text" id="editage" required>
-                                <label for="editage" class="special">Age</label>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="">
-                            <div class="datepicker3 input-group date">
-                                        <input type="text" class=" form-control" placeholder="appointment Date" required>
-                                        <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar
-                                            "></span>
-                                        </div>
-                            </div>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-                </div>
-
-                <div class="row">
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <select class="selectpicker1" id="selectpicker">
-                            <option>Status</option>
-                            <option>Checking</option>
-                            <option>Arrived</option>
-                            <option>Reserved</option>
-                        </select>
-                    </div>
-                    <!--col-->
-
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="">
-                            <select class="selectpicker2" id="selectpicker">
-                                <option>Appointment Number</option>
-                                <option>A1</option>
-                                <option>A2</option>
-                            </select>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-                </div>
-
-            </div>
-            <!--modal body-->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <!--edit modals-->
-
-    <!--Delete modal-->
-     <div class="modal fade rale" tabindex="-1" role="dialog" id="deleteModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><span class="fas fa-trash-alt"></span>Delete Appointment</h4>
-            </div>
-            <!--modal body-->
-            <div class="modal-body">
-
-                You Are going to Delete this Appointment. Are  you sure?
-                
-            </div>
-            <!--modal body-->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Delete</button>
-            </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <!--Delete modal-->
+    
 
     <!--start main wrapper-->
     <div class="main-wrapper">
@@ -592,45 +384,12 @@
                        <div class="welcome-message">
                             <h3>Hello Dr <span class="welcome_user">MohamedEmad</span>, welcome!</h3>
                             <p>
-                                All your Appointments are displayed here. Here you have the possibility to manage all Appointments.
+                                All your Patients are displayed here. Here you have the possibility to manage all patients.
                             </p>
                        </div>
                        <!--welcome message-->
 
-                        <!--control row-->
-                        <div class="table-search">
-                             <div class="row">
-                                
-                                <!--col-->
-                                <div class="col-sm-6">
-                                    <div class="search-filters">
-                                        <button class="custom-button custom-button--blue">Today</button>
-
-                                        <div class="datepicker input-group date">
-                                                <input type="text" class=" form-control" placeholder="Search by Date" required>
-                                                <div class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-calendar
-                                                    "></span>
-                                                </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!--col-->
-
-                                <!--col-->
-                                <div class="col-sm-6 custom-align">
-                                    <button class="add-appoint custom-button custom-button--blue">
-                                        Add Appointment <span class="fas fa-clock"></span>
-                                    </button>
-                                </div>
-                                <!--col-->
-
-
-                             </div><!--row-->
-                        </div><!--table search-->
-                       
-                        <!--control row-->
+                    
                        
                         <!--table row-->
                         <!--row-->
@@ -645,8 +404,8 @@
 
                                         <!--order head-->
                                         <div class="order-head">
-                                            <h3 class="order-heading">Your Appointment</h3>
-                                            <p class="order-paragraph">here your active Appointment </p>
+                                            <h3 class="order-heading">Your Patient</h3>
+                                            <p class="order-paragraph">here your active Patient </p>
                                         </div>
 
                                         <!--order data-->
@@ -660,12 +419,10 @@
                                                 <!--table head-->
                                                 <thead class="table__header">
                                                     <tr class="table__header--row">
-                                                        <th>Appointment No</th>
+                                                        <th>Patient ID</th>
                                                         <th>Patient Name</th>
                                                         <th>Age</th>
-                                                        <th>Appointment Date</th>
-                                                        <th>Status</th>
-                                                        <th>Operations</th>
+                                                        <th>Join</th>
                                                     </tr>
                                                 </thead>
                                                 <!--table head-->
@@ -674,135 +431,53 @@
                                                 <!--table body-->
                                                 <tbody class="table__body">
 
-                                                    <tr class="table__body--row">              
+                                                        <tr class="table__body--row">              
 
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock">
+                                                            <td class="car-head">1</td>
+                                                            <td>MohamedAhmed</td>
+                                                            <td>23</td>
+                                                            <td>07/10/2018</td>
+                                                            
+                                                        </tr>
 
-                                                            </span> A1
-                                                        </td>
-                                                        <td>MohamedAhmed</td>
-                                                        <td>23</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>checking</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
-                                                        
-                                                    </tr>
+                                                        <tr class="table__body--row">              
 
-                                                    <tr class="table__body--row">              
+                                                            <td class="car-head">2</td>
+                                                            <td>MohamedAdel</td>
+                                                            <td>23</td>
+                                                            <td>07/10/2018</td>
+                                                            
+                                                        </tr>
 
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock"></span>A2 
-                                                        </td>
-                                                        <td>MostafaAhmed</td>
-                                                        <td>25</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>Arrived</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
-                                                        
-                                                    </tr>
 
-                                                    <tr class="table__body--row">              
+                                                        <tr class="table__body--row">              
 
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock">
+                                                            <td class="car-head">3</td>
+                                                            <td>MohamedZiad</td>
+                                                            <td>23</td>
+                                                            <td>07/10/2018</td>
+                                                            
+                                                        </tr>
 
-                                                            </span> A1
-                                                        </td>
-                                                        <td>khaledAhmed</td>
-                                                        <td>27</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>Arrived</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
-                                                        
-                                                    </tr>
+                                                        <tr class="table__body--row">              
 
-                                                    <tr class="table__body--row">              
+                                                            <td class="car-head">4</td>
+                                                            <td>AhmedAdel</td>
+                                                            <td>23</td>
+                                                            <td>07/10/2018</td>
+                                                            
+                                                        </tr>
 
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock">
+                                                        <tr class="table__body--row">              
 
-                                                            </span> A4
-                                                        </td>
-                                                        <td>Ahmedmohamed</td>
-                                                        <td>23</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>Arrived</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
-                                                        
-                                                    </tr>
+                                                            <td class="car-head">5</td>
+                                                            <td>MohamedEmad</td>
+                                                            <td>23</td>
+                                                            <td>07/10/2018</td>
+                                                            
+                                                        </tr>
 
-                                                    <tr class="table__body--row">              
-
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock">
-
-                                                            </span> A5
-                                                        </td>
-                                                        <td>MariamAhmed</td>
-                                                        <td>23</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>Arrived</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
-                                                        
-                                                    </tr>
-
-                                                    <tr class="table__body--row">              
-
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock">
-
-                                                            </span> A6
-                                                        </td>
-                                                        <td>MohamedAhmed</td>
-                                                        <td>23</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>Arrived</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
-                                                        
-                                                    </tr>
+                                                    
 
                                                    
                                                     
