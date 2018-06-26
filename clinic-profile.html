@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Dashboard</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--datatables-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.0/css/buttons.bootstrap.min.css">
+    <link rel="stylesheet"href="https://cdn.datatables.net/select/1.2.4/css/select.bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <!--styles-->
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--font awesome-->
+	<link rel="stylesheet" href="css/fontawesome.min.css">
+	<link rel="stylesheet" href="css/fa-solid.min.css">
+	<link rel="stylesheet" href="css/fa-brands.min.css">
+    <!--load google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!--upload img modal-->
+    <div class="modal fade rale" tabindex="-1" role="dialog" id="imgEditModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span class="fas fa-image"></span>uploading Image</h4>
+            </div>
+            <!--modal body-->
+            <div class="modal-body">
+
+               <!--custom upload--> 
+               <div class="custom-upload">
+                    <input type="file" id="img-upload" hidden="hidden">
+                    <div class="file-info">
+                        no file chosen yet!
+                    </div>
+                    <button class="choose-button">Choose image</button>
+
+                    <div class="uploaded-view">
+                        <img src="images/user.jpeg" alt="upload">
+                    </div>
+               </div>
+               <!--custom upload--> 
+
+
+            </div>
+            <!--modal body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">save</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--upload img modal-->
+
+    <!--edit modal-->
+    <div class="modal fade rale" tabindex="-1" role="dialog" id="infoEditModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span class="fas fa-user-circle"></span>Update Profile</h4>
+            </div>
+            <!--modal body-->
+            <div class="modal-body">
+
+                <!--user profile update-->
+                <div class="user-profile-update">
+
+                    <h5>Doctor information</h5>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="firstname">First name</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="firstname" class="update-input" placeholder="first name" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="lastname">Last name</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="lastname" class="update-input" placeholder="lastname" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="specialization">specialization</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="specialization" class="update-input" placeholder="specialization" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="BirthDate">Birth Date</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="BirthDate" class="update-input" placeholder="mm / dd / yy" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="aboutdoctor">About Doctor</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <textarea id="aboutdoctor" class="custom-input" placeholder="About doctor" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="ticket">ticket price</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="ticket" class="update-input" placeholder="Ex : 50 EGP" required>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="address">clinic address</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="address" class="update-input" placeholder="clinic address" required>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="openFrom">open From</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="openFrom" class="update-input" placeholder="Ex: sat 10:00 AM to 8:00 PM " required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="opento">open to</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="opento" class="update-input" placeholder="EX : wed 10:00 AM to 8:00 PM " required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="City">City</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="City" class="update-input" placeholder="City" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="zipcode">Zip Code</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="zipcode" class="update-input" placeholder="zipcode" required>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="update-group">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label for="phone">phone number</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="phone" class="update-input" placeholder="phone number" required>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <!--user profile update-->
+
+
+               
+
+
+            </div>
+            <!--modal body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">save</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--edit modal-->
+
+    <!--start main wrapper-->
+    <div class="main-wrapper">
+
+        <!--header-->
+        <header class="header rale">
+
+            <!--start nav-->
+            <nav class="dashnav">
+                <!--dashNav Header-->
+                <div class="dashnav__header">
+                    <!--logo-->
+                    <div class="logo">
+                        <a href="#">
+                            <img src="images/logo3.png" alt="logo">
+                        </a>
+                    </div>
+                    <!--logo-->
+                    <!--navButton-->
+                    <div class="navButton">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <!--navButton-->
+                </div>
+                <!--dashNav Header-->
+
+
+
+
+               <!--main navigation-->
+                <div class="topnav">
+                    <ul class="topnav__list">
+
+                        
+                        <!--notification-->
+                        <li class="listItem  notification">
+                            <a href="#" class="list-link">
+                                <span class="fas fa-bell
+
+                                "></span>
+                            </a>
+
+
+                            <!--notification control-->
+                            <ul class="dropDown notification-control">
+                                 <li class="dropDown__list">
+                                    <div class="notification-heading">
+                                        <h3>notifications</h3>
+                                    </div>
+                                </li>
+                               
+                                <!--notification container-->
+                                <div class="notification-container">
+                                   <li class="dropDown__list">
+                                        <div class="notification-img">
+                                            <span class="glyphicon glyphicon-bell
+                                            ">
+
+                                            </span>
+                                        </div>
+                                        <div class="notification-info">
+                                            <p class="notification-name">Launch admin</p>
+                                            <p class="notification-text">Hello, don't miss launch</p>
+                                            <p class="notification-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="dropDown__list">
+                                        <div class="notification-img">
+                                            <span class="glyphicon glyphicon-bell
+                                            ">
+
+                                            </span>
+                                        </div>
+                                        <div class="notification-info">
+                                            <p class="notification-name">Have a nice day</p>
+                                            <p class="notification-text">Hello, don't miss launch</p>
+                                            <p class="notification-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="dropDown__list">
+                                        <div class="notification-img">
+                                            <span class="glyphicon glyphicon-bell
+                                            ">
+
+                                            </span>
+                                        </div>
+                                        <div class="notification-info">
+                                            <p class="notification-name">Hello world!</p>
+                                            <p class="notification-text">Hello, don't miss launch</p>
+                                            <p class="notification-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+
+                                </div>
+                                <!--notification container-->
+                                <a href="" class="seeall">see all notifications</a>
+                            </ul>
+                            <!--notification control-->
+                        </li>
+                        <!--notification-->
+
+                        <!--message-->
+                        <li class="listItem message">
+                            <a href="#" class="list-link">
+                                <span class="fab fa-facebook-messenger
+                                "></span>
+                            </a>
+
+                            <!--message control-->
+                            <ul class="dropDown message-control">
+
+                                <li class="dropDown__list">
+                                    <div class="message_number">
+                                        <h3>you have <span>3</span> new meassges</h3>
+                                    </div>
+                                </li>
+
+                                <!--message-control-->
+                                <div class="message-container">
+                                    <li class="dropDown__list">
+                                        <div class="sender-img">
+                                            <img src="images/user.jpg" alt="sender">
+                                        </div>
+                                        <div class="sender-info">
+                                            <p class="sender-name">Ahmed Nabil</p>
+                                            <p class="sender-text">Hello, Mohamed</p>
+                                            <p class="sender-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="dropDown__list">
+                                        <div class="sender-img">
+                                            <img src="images/user.jpg" alt="sender">
+                                        </div>
+                                        <div class="sender-info">
+                                            <p class="sender-name">Ahmed Nabil</p>
+                                            <p class="sender-text">Hello, Mohamed</p>
+                                            <p class="sender-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="dropDown__list">
+                                        <div class="sender-img">
+                                            <img src="images/user.jpg" alt="sender">
+                                        </div>
+                                        <div class="sender-info">
+                                            <p class="sender-name">Ahmed Nabil</p>
+                                            <p class="sender-text">Hello, Mohamed</p>
+                                            <p class="sender-time">9:45 AM</p>
+                                        </div>
+                                    </li>
+                                </div>
+                                <!--message container-->
+
+                                <a href="#" class="seeall">see all Messages</a>
+                               
+
+                            </ul>
+                            <!--message control-->
+
+                        </li>
+                        <!--message-->
+
+                        <!--user control-->
+                        <li class="listItem user-space">
+
+                            <a href="" class="list-link">
+                                <img src="images/user.jpg" alt="user">
+                            </a>
+
+                            <!--user control-->
+                            <ul class="dropDown user-control">
+
+                                <li class="dropDown__list">
+                                    <div class="user-space">
+                                        <div class="user-img">
+                                            <img src="images/user.jpg" alt="user">
+                                        </div>
+
+                                        <div class="user-info">
+                                            <span class="user-name">MohamedEmad</span>
+                                            <span class="user-email">MohamedEmad@gmail.com</span>
+                                        </div>
+                                    </div><!--user information-->
+                                </li>
+
+                                
+                                <li class="dropDown__list">
+                                    <a href="#" class="downlink">
+                                        <div class="list-icon">
+                                            <span class="icon glyphicon glyphicon-envelope
+                                            "></span>
+                                        </div>
+                                        <div class="text">
+                                            <span class="text-box">
+                                                Messages
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="dropDown__list">
+                                    <a href="#" class="downlink">
+                                        <div class="list-icon">
+                                            <span class="icon glyphicon glyphicon-cog
+
+                                            "></span>
+                                        </div>
+                                        <div class="text">
+                                            <span class="text-box">
+                                                Account Setting
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                
+                                <li class="dropDown__list">
+                                    <a href="#" class="downlink">
+                                        <div class="list-icon">
+                                            <span class="icon glyphicon glyphicon-off
+
+
+                                            "></span>
+                                        </div>
+                                        <div class="text">
+                                            <span class="text-box">
+                                                log out
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <!--user control-->
+                        </li>
+                    </ul>
+                </div><!--mainNav-->
+                <!--main navigation-->
+
+
+
+
+
+            </nav><!--nav-->
+            <!--end nav-->
+
+        </header><!--header-->
+        <!--header-->
+
+        <!--main content-->
+        <div class="mainContent">
+
+            <!--side menu-->
+            <aside class="sideMenu rale">
+                <!--user information-->
+                <div class="sideUser clearfix">
+                    <div class="sideImg">
+                        <img src="images/user.jpg" alt="userPhoto" draggable="false
+                        ">
+                    </div><!--user img-->
+                    <div class="userName">
+                        <p class="sideUname">MohamedEmad</p>
+                        <p class="sideUemail">mohamedemad201194@gmail.com</p>
+                    </div><!--user name-->
+                </div><!--side user-->
+                <!--user information-->
+
+             <!--side menu-->
+            <aside class="sideMenu rale">
+                <!--user information-->
+                <div class="sideUser clearfix">
+                    <div class="sideImg">
+                        <img src="images/user.jpg" alt="userPhoto" draggable="false
+                        ">
+                    </div><!--user img-->
+                    <div class="userName">
+                        <p class="sideUname">MohamedEmad</p>
+                        <p class="sideUemail">mohamedemad201194@gmail.com</p>
+                    </div><!--user name-->
+                </div><!--side user-->
+                <!--user information-->
+
+                <!--sidebar nav-->
+                <ul class="sideList">
+                    <li class="sideList__item">
+                        <a href="index.html">
+                            <div class="sideIcon">
+                                <span class="listIcon fas fa-clock"></span>
+                            </div>
+                            <div>
+                                Appointments
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="sideList__item">
+                        <a href="patients.html">
+                            <div class="sideIcon">
+                                <span class="listIcon fas fa-users"></span>
+                            </div>
+                            <div>
+                                Patients
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="sideList__item">
+                        <a href="#">
+                            <div class="sideIcon">
+                                <span class="listIcon fas fa-chart-line"></span>
+                            </div>
+                           <div>
+                            Statistics
+                           </div>
+                        </a>
+                    </li>
+
+                    <li class="sideList__item">
+                        <a href="#">
+                           <div class="sideIcon">
+                                <span class="listIcon fab fa-facebook-messenger"></span>
+                           </div>
+                           <div>
+                                Messages
+                           </div> 
+                        </a>
+                    </li>
+
+                    
+                    <li class="sideList__item">
+                        <a href="clinic-profile.html">
+                            <div class="sideIcon">
+                                <span class="listIcon fas fa-user-circle"></span>
+                            </div>
+                            <div>
+                                Profile Setting
+                            </div>
+                        </a>
+                    </li>
+
+                    
+                    
+                </ul>
+                <!--sidebar nav-->
+
+
+            </aside>
+            <!--end side menu-->
+
+
+            </aside>
+            <!--end side menu-->
+
+            <!--pageContent-->
+            <div class="pageContent rale">
+                <div class="container-fluid">
+
+                    <!--user profile-->
+                    <div class="user-profile">
+
+                        <!--img info edit row-->
+                        <div class="row">
+
+
+                            <!-- img col-->
+                            <div class="col-sm-3">
+                                <div class="profile-photo">
+                                    <div class="profile-operation">
+                                        <span class="fas fa-images"></span>
+                                    </div>
+                                    <img src="images/user.jpeg" alt="user">
+                                </div>
+                            </div>
+                            <!--col-->
+
+                            <!--info column-->
+                            <div class="col-sm-9">
+
+                                
+                                <!--user full name and edit button-->
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="profile-name-edit">
+                                            <div class="userFullName">
+                                                Mohamed Ahmed
+                                            </div>
+                                            <div class="edit">
+                                                <button class="profile-edit">Edit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--user full name and edit button-->
+
+                                <!--user info -->
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="user-profile-info">
+
+                                            <!--internal row-->
+                                            <div class="row">
+
+                                                <div class="col-xs-6">
+                                                    <div class="user-profile-info-labels">
+                                                        <span class="info-labels">Dr Name</span>
+                                                        <span class="info-labels">specialization</span>
+                                                        
+                                                        <span class="info-labels">
+                                                            phone Number
+                                                        </span>
+                                                        <span class="info-labels">
+                                                            Date of birth
+                                                        </span>
+                                                        <span class="info-labels">Clinic address</span>
+                                                        <span class="info-labels">Ticket Price</span>
+                                                        <span class="info-labels">open From</span>
+                                                        <span class="info-labels">
+                                                            open to
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <div class="user-profile-info-values">
+                                                        <span class="info-labels">MohamedAhmed</span>
+                                                        <span class="info-labels">Heart</span>
+                                                        <span class="info-labels">
+                                                                01063345505
+                                                        </span>
+                                                        <span class="info-labels">
+                                                                08 / 03 / 1970
+                                                        </span>
+                                                        <span class="info-labels">Menofia ,  shebinElkom</span>
+                                                        <span class="info-labels">50 EGP</span>
+                                                        <span class="info-labels">Sat 10:00 AM to 8:00 PM</span>
+                                                        <span class="info-labels">
+                                                            Wed at 10:00 AM to 8:00 PM
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <!--internal row-->
+
+
+
+                                        </div>
+                                  </div>
+                                </div>
+                                <!--user info -->
+
+
+
+
+                            </div>
+                            <!--info column-->
+
+
+
+                        </div>
+                        <!--img info edit row-->
+
+                        <!--about row-->
+                        <div class="row">
+                           <div class="col-xs-12">
+                                <div class="profile-about">
+                                    <h4>About you</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit sunt dolore assumenda iusto, mollitia maiores quaerat cumque perferendis molestiae natus debitis qui cupiditate tempore omnis totam minus accusamus unde cum.
+                                        orem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit sunt dolore assumenda iusto, mollitia maiores quaerat cumque perferendis molestiae natus debitis qui cupiditate tempore omnis totam minus accusamus unde cum.
+                                    </p>
+                                </div>
+                           </div>
+                        </div>
+                        <!--about row-->
+
+
+
+                    </div>
+                    <!--user profile-->
+
+                </div>
+            </div>
+            <!--pageContent-->
+
+
+        </div>
+        <!--main content-->
+
+    </div><!--main wrapper-->
+    <!--end main wrapper-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <!--tables-->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <scrip src="https://cdn.datatables.net/buttons/1.5.0/js/dataTables.buttons.min.js"></script>
+    <scrip src="https://cdn.datatables.net/select/1.2.4/js/dataTables.select.min.js"></script>
+    <scrip src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+    <scrip src="https://cdn.datatables.net/buttons/1.5.0/js/buttons.bootstrap.min.js"></script>
+    <script            src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js">
+    </script>
+    <!--main script-->
+    <script src="js/main.js"></script>
+  </body>
+</html>

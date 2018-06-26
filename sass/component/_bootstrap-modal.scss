@@ -149,4 +149,178 @@
     width:100%;
     margin-bottom: 20px;
 }
+
+
+#viewDiagnosisModal{
+    .viewDiag{
+
+        textarea{
+            padding: 15px;
+            width:100%;
+            border:1px solid rgba(0,0,0,.2);
+            height: 150px;
+            line-height: 1.6;
+            resize: none;
+            overflow-y: scroll;
+            border-radius: 5px;
+        }
+
+        .diagAttatchment{
+            border-top:1px solid rgba(0,0,0,.2);
+            margin-top: 25px;
+            padding-top: 25px;
+
+            h5{
+                text-transform: capitalize;
+                span{
+                    margin-right: 10px;
+                    color:$notify;
+                }
+            }
+
+            img{
+                cursor: pointer;
+                width:128px;
+                height: 128px;
+            }
+        }
+
+    }
+
+
+}
+
+#viewattatchModal{
+    .view-img{
+
+        
+        .custom-button{
+            margin: auto;
+            margin-top: 25px;
+
+            span{
+                margin-right: 15px;
+            }
+
+        }
+
+        img{
+            max-width: 100%;
+            display: block;
+        }
+    }
+}
+
+#DiagnosisModal,
+#imgEditModal{
+
+    .addDiagnosis{
+
+        textarea{
+            padding: 15px;
+            width:100%;
+            border:1px solid rgba(0,0,0,.2);
+            height: 150px;
+            line-height: 1.6;
+            resize: none;
+            overflow-y: scroll;
+            border-radius: 5px;
+        }
+    }
+
+    .custom-upload{
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+    #img-upload{
+        visibility: hidden;
+    }
+
+    .file-info{
+        background: #f8f8f8;
+        padding: 15px 20px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .choose-button{
+        border:none;
+        padding: 10px 20px;
+        margin: auto;
+        border-radius: 3px;
+        color: #fff;
+        background: $notify;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    .uploaded-view{
+        margin-top:25px;
+        width:200px;
+        img{
+            max-width: 100%;
+        }
+    }
+
+
+}
+//profile edit info
+#infoEditModal{
+    .user-profile-update{
+        padding: 20px;
+        height: 550px;
+        overflow-y: scroll;
+
+        .update-group{
+            margin-bottom: 25px;
+        }
+        
+        .update-input{
+            width: 100%;
+            padding: 5px 10px;
+            border-radius: 3px;
+            border:1px solid rgba(0,0,0,.2);
+            transition: all .5s;
+
+            &:focus{
+                outline: none;
+                border:1px solid $notify;
+            }
+        }
+
+        textarea{
+
+            width: 100%;
+            padding: 5px 10px;
+            border-radius: 3px;
+            border:1px solid rgba(0,0,0,.2);
+            transition: all .5s;
+            height: 120px;
+            resize: none;
+
+            &:focus{
+                outline: none;
+                border:1px solid $notify;
+            }
+        }
+
+
+        label{
+            cursor: pointer;
+        }
+
+        h5{
+            color:#000;
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+    }
+}
 /*bootstrap modal*/

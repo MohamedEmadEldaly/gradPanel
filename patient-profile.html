@@ -34,215 +34,116 @@
   </head>
   <body>
 
-    <!--add modal-->
-    <div class="modal fade rale" tabindex="-1" role="dialog" id="addModal">
+    <!--DiagnosisModal-->
+    <div class="modal fade rale" tabindex="-1" role="dialog" id="DiagnosisModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><span class="fas fa-clock"></span>Adding Appointment</h4>
+                <h4 class="modal-title"><span class="fas fa-diagnoses"></span>Adding Diagnosis</h4>
             </div>
             <!--modal body-->
             <div class="modal-body">
 
-                <div class="row">
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                                <span class="icon glyphicon glyphicon-user
-                                "></span>
-                                <input type="text" id="fname" required>
-                                <label for="fname" class="special">First Name</label>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                                <span class="icon glyphicon glyphicon-user
-                                "></span>
-                                <input type="text" id="lname" required>
-                                <label for="lname" class="special">Last Name</label>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
+                <div class="addDiagnosis">
+                    <textarea placeholder="write your diagnosis here" required></textarea>
                 </div>
 
-                <div class="row">
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                                <span class="icon fas fa-child
-                                "></span>
-                                <input type="text" id="age" required>
-                                <label for="age" class="special">Age</label>
-                        </div><!--form group-->
+                <!--custom upload--> 
+               <div class="custom-upload">
+                    <input type="file" id="img-upload" hidden="hidden">
+                    <div class="file-info">
+                        no file chosen yet!
                     </div>
-                    <!--col-->
+                    <button class="choose-button">Choose image</button>
 
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="">
-                            <div class="datepicker1 input-group date">
-                                        <input type="text" class=" form-control" placeholder="appointment Date" required>
-                                        <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar
-                                            "></span>
-                                        </div>
-                            </div>
-                        </div><!--form group-->
+                    <div class="uploaded-view">
+                        <img src="images/user.jpeg" alt="upload">
                     </div>
-                    <!--col-->
-                </div>
-
-                <div class="row">
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <select class="selectpicker1" id="selectpicker">
-                            <option>Status</option>
-                            <option>Checking</option>
-                            <option>Arrived</option>
-                            <option>Reserved</option>
-                        </select>
-                    </div>
-                    <!--col-->
-
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="">
-                            <select class="selectpicker2" id="selectpicker">
-                                <option>Appointment Number</option>
-                                <option>A1</option>
-                                <option>A2</option>
-                            </select>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-                </div>
+               </div>
+               <!--custom upload--> 
 
             </div>
             <!--modal body-->
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add Appointment</button>
+                <button type="button" class="btn btn-primary">Add Diagnosis</button>
             </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <!--add modals-->
+    <!--DiagnosisModal-->
 
-    <!--edit modal-->
-    <div class="modal fade rale" tabindex="-1" role="dialog" id="editModal">
+    <!--view Diagnosis Modal-->
+     <div class="modal fade rale" tabindex="-1" role="dialog" id="viewDiagnosisModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><span class="fas fa-edit"></span>Edit Appointment</h4>
+                <h4 class="modal-title"><span class="fas fa-diagnoses"></span>View Diagnosis</h4>
             </div>
             <!--modal body-->
             <div class="modal-body">
 
-                <div class="row">
-                    <!--col-->
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                                <span class="icon glyphicon glyphicon-user
-                                "></span>
-                                <input type="text" id="editName" required>
-                                <label for="editName" class="special">patient Name</label>
-                        </div><!--form group-->
+                <div class="viewDiag">
+
+                    <textarea readonly>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolore omnis unde fuga ipsum possimus voluptatum distinctio? Perspiciatis numquam esse debitis, hic id facilis, ipsum quod laudantium voluptas quos earum.</textarea>
+
+                    <div class="diagAttatchment">
+                        <h5><span class="fas fa-file"></span>attatchments :</h5>
+                        <img src="images/user.jpg" alt="attatchment">
+                        <img src="images/user.jpg" alt="attatchment">
+                        <img src="images/user.jpeg" alt="attatchment">
                     </div>
-                    <!--col-->
+
+
+
                 </div>
-
-                <div class="row">
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                                <span class="icon fas fa-child
-                                "></span>
-                                <input type="text" id="editage" required>
-                                <label for="editage" class="special">Age</label>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="">
-                            <div class="datepicker3 input-group date">
-                                        <input type="text" class=" form-control" placeholder="appointment Date" required>
-                                        <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar
-                                            "></span>
-                                        </div>
-                            </div>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-                </div>
-
-                <div class="row">
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <select class="selectpicker1" id="selectpicker">
-                            <option>Status</option>
-                            <option>Checking</option>
-                            <option>Arrived</option>
-                            <option>Reserved</option>
-                        </select>
-                    </div>
-                    <!--col-->
-
-                    <!--col-->
-                    <div class="col-sm-6">
-                        <div class="">
-                            <select class="selectpicker2" id="selectpicker">
-                                <option>Appointment Number</option>
-                                <option>A1</option>
-                                <option>A2</option>
-                            </select>
-                        </div><!--form group-->
-                    </div>
-                    <!--col-->
-                </div>
-
-            </div>
-            <!--modal body-->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <!--edit modals-->
-
-    <!--Delete modal-->
-     <div class="modal fade rale" tabindex="-1" role="dialog" id="deleteModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><span class="fas fa-trash-alt"></span>Delete Appointment</h4>
-            </div>
-            <!--modal body-->
-            <div class="modal-body">
-
-                You Are going to Delete this Appointment. Are  you sure?
                 
+
             </div>
             <!--modal body-->
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Delete</button>
             </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    <!--Delete modal-->
+
+    <!--view Diagnosis Modal-->
+
+    <!--view Diagnosis attachment Modal-->
+     <div class="modal fade rale" tabindex="-1" role="dialog" id="viewattatchModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span class="fas fa-file"></span>View attachment</h4>
+            </div>
+            <!--modal body-->
+            <div class="modal-body">
+
+                <div class="view-img">
+                    <img src="images/user.jpeg" alt="view">
+
+                    <button class="custom-button custom-button--blue"><span class="fas fa-file"></span>Download</button>
+                </div>
+                
+
+            </div>
+            <!--modal body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!--view Diagnosis Modal-->
+
+
+    
 
     <!--start main wrapper-->
     <div class="main-wrapper">
@@ -562,7 +463,7 @@
 
                     
                     <li class="sideList__item">
-                        <a href="clinic-profile.html">
+                        <a href="#">
                             <div class="sideIcon">
                                 <span class="listIcon fas fa-user-circle"></span>
                             </div>
@@ -586,13 +487,13 @@
                 <div class="container-fluid">
 
                     <!--dashboard-->
-                    <div class="dashboard">
+                    <div class="dashboard patient-profile">
 
                        <!--welcome message-->
                        <div class="welcome-message">
                             <h3>Hello Dr <span class="welcome_user">MohamedEmad</span>, welcome!</h3>
                             <p>
-                                All your Appointments are displayed here. Here you have the possibility to manage all Appointments.
+                                All your Patient Medical history are displayed here. Here you have the possibility to See all characterstics.
                             </p>
                        </div>
                        <!--welcome message-->
@@ -604,9 +505,8 @@
                                 <!--col-->
                                 <div class="col-sm-6">
                                     <div class="search-filters">
-                                        <button class="custom-button custom-button--blue">Today</button>
-
-                                        <div class="datepicker input-group date">
+                                        
+                                        <div class="datepicker2 input-group date">
                                                 <input type="text" class=" form-control" placeholder="Search by Date" required>
                                                 <div class="input-group-addon">
                                                     <span class="glyphicon glyphicon-calendar
@@ -620,8 +520,8 @@
 
                                 <!--col-->
                                 <div class="col-sm-6 custom-align">
-                                    <button class="add-appoint custom-button custom-button--blue">
-                                        Add Appointment <span class="fas fa-clock"></span>
+                                    <button class="add-Diagnosis custom-button custom-button--blue">
+                                        Add Diagnosis <span class="fas fa-diagnoses"></span>
                                     </button>
                                 </div>
                                 <!--col-->
@@ -645,8 +545,8 @@
 
                                         <!--order head-->
                                         <div class="order-head">
-                                            <h3 class="order-heading">Your Appointment</h3>
-                                            <p class="order-paragraph">here your active Appointment </p>
+                                            <h3 class="order-heading">Mohamed Ahmed Medical history</h3>
+                                            <p class="order-paragraph">Here Mohamed Ahmed Medical history </p>
                                         </div>
 
                                         <!--order data-->
@@ -660,12 +560,10 @@
                                                 <!--table head-->
                                                 <thead class="table__header">
                                                     <tr class="table__header--row">
-                                                        <th>Appointment No</th>
-                                                        <th>Patient Name</th>
-                                                        <th>Age</th>
-                                                        <th>Appointment Date</th>
-                                                        <th>Status</th>
-                                                        <th>Operations</th>
+                                                        <th>Dr Name</th>
+                                                        <th>specialization</th>
+                                                        <th>Date</th>
+                                                        <th>Operation</th>
                                                     </tr>
                                                 </thead>
                                                 <!--table head-->
@@ -674,141 +572,89 @@
                                                 <!--table body-->
                                                 <tbody class="table__body">
 
-                                                    <tr class="table__body--row">              
+                                                        <tr class="table__body--row">              
 
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock">
+                                                            <td class="car-head">
+                                                                <span class="fas fa-user-md"></span> Doaa Ahmed
+                                                            </td>
+                                                            <td class="car-head">
+                                                                <span class="fas fa-heartbeat"></span> Heart
+                                                            </td>
+                                                            <td>11/10/2018</td>
 
-                                                            </span> A1
-                                                        </td>
-                                                        <td>MohamedAhmed</td>
-                                                        <td>23</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>checking</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
+                                                            <td>
+                                                                <button class="btn btn-success viewDiagnosis btn-xs">
+                                                                    view Diagnosis <span class="fas fa-diagnoses"></span>
+                                                                </button>
+                                                            </td>
+                                                            
+                                                        </tr>
+
                                                         
-                                                    </tr>
+                                                        <tr class="table__body--row">              
 
-                                                    <tr class="table__body--row">              
+                                                            <td class="car-head">
+                                                                <span class="fas fa-user-md"></span> Mohamed Ahmed
+                                                            </td>
+                                                            <td class="car-head">
+                                                                <span class="fas fa-eye"></span>Eye
+                                                            </td>
+                                                            <td>10/10/2018</td>
 
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock"></span>A2 
-                                                        </td>
-                                                        <td>MostafaAhmed</td>
-                                                        <td>25</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>Arrived</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
+                                                            <td>
+                                                                <button class="btn btn-success viewDiagnosis btn-xs">
+                                                                    view Diagnosis <span class="fas fa-diagnoses"></span>
+                                                                </button>
+                                                            </td>
+                                                            
+                                                        </tr>
+
+
+
+                                                        <tr class="table__body--row">              
+
+                                                            <td class="car-head">
+                                                                <span class="fas fa-user-md"></span> Doaa Ahmed
+                                                            </td>
+                                                            <td class="car-head">
+                                                                <span class="fas fa-heartbeat"></span> Heart
+                                                            </td>
+                                                            <td>09/10/2018</td>
+
+                                                            <td>
+                                                                <button class="btn btn-success viewDiagnosis btn-xs">
+                                                                    view Diagnosis <span class="fas fa-diagnoses"></span>
+                                                                </button>
+                                                            </td>
+                                                            
+                                                        </tr>
+
                                                         
-                                                    </tr>
+                                                        <tr class="table__body--row">              
 
-                                                    <tr class="table__body--row">              
+                                                            <td class="car-head">
+                                                                <span class="fas fa-user-md"></span> Mohamed Ahmed
+                                                            </td>
+                                                            <td class="car-head">
+                                                                <span class="fas fa-eye"></span>Eye
+                                                            </td>
+                                                            <td>17/10/2018</td>
 
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock">
+                                                            <td>
+                                                                <button class="btn btn-success viewDiagnosis btn-xs">
+                                                                    view Diagnosis <span class="fas fa-diagnoses"></span>
+                                                                </button>
+                                                            </td>
+                                                            
+                                                        </tr>
 
-                                                            </span> A1
-                                                        </td>
-                                                        <td>khaledAhmed</td>
-                                                        <td>27</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>Arrived</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
-                                                        
-                                                    </tr>
-
-                                                    <tr class="table__body--row">              
-
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock">
-
-                                                            </span> A4
-                                                        </td>
-                                                        <td>Ahmedmohamed</td>
-                                                        <td>23</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>Arrived</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
-                                                        
-                                                    </tr>
-
-                                                    <tr class="table__body--row">              
-
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock">
-
-                                                            </span> A5
-                                                        </td>
-                                                        <td>MariamAhmed</td>
-                                                        <td>23</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>Arrived</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
-                                                        
-                                                    </tr>
-
-                                                    <tr class="table__body--row">              
-
-                                                        <td class="car-head">
-                                                            <span class="fas fa-clock">
-
-                                                            </span> A6
-                                                        </td>
-                                                        <td>MohamedAhmed</td>
-                                                        <td>23</td>
-                                                        <td>07/10/2018</td>
-                                                        <td>Arrived</td>
-                                                        <td class="operation">
-                                                            <button class="btn btn-danger btn-xs delete">
-                                                                Delete <span class="fas fa-trash-alt"></span>
-                                                            </button>
-                                                            <button class="btn btn-success edit btn-xs">
-                                                                Edit <span class="fas fa-edit"></span>
-                                                            </button>
-                                                        </td>
-                                                        
-                                                    </tr>
 
                                                    
                                                     
                                                             
                                                 </tbody>
                                                 <!--table body-->
+
 
                                             </table>
                                             <!--table head-->

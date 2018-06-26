@@ -135,6 +135,70 @@ $(document).ready(function () {
     });
 
 
+    //patient profile script here after this
+    $('.add-Diagnosis').on('click', function () {
+        $('#DiagnosisModal').modal({
+            show:true
+        });
+    });
+
+    // view diagnosis
+
+    $('.viewDiagnosis').on('click', function () {
+        $('#viewDiagnosisModal').modal({
+            show:true
+        });
+    });
+
+
+    //attatchment modal 
+
+    $('.diagAttatchment img').on('click', function (){
+
+        $('#viewattatchModal').modal({
+            show:true
+        });
+
+        $('#viewattatchModal .view-img img').attr('src', $(this).attr('src'));
+
+
+    });
+
+
+
+    // filter date picker
+
+    $('.datepicker2').datepicker({
+        autoclose:true,
+        orientation: "bottom left"
+    });
+
+    //upload custom button
+
+    $('#DiagnosisModal .choose-button').on('click', function (){
+        $('#img-upload').click();
+    });
+
+     // profile page img edit model
+     $('.profile-operation , .profile-operation span').on('click', function () {
+    
+        $('#imgEditModal').modal({
+            show:true
+        });
+    });
+
+    $('.profile-edit').on('click', function () {
+        $('#infoEditModal').modal({
+            show:true
+        });
+    });
+
+    //upload custom button
+    $('#imgEditModal .choose-button').on('click', function (){
+        $('#img-upload').click();
+    });
+
+
 
 
 

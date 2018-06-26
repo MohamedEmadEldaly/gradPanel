@@ -1051,6 +1051,159 @@ div.dataTables_wrapper .dataTables_paginate span a:last-child {
   margin-bottom: 20px;
 }
 
+#viewDiagnosisModal .viewDiag textarea {
+  padding: 15px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 150px;
+  line-height: 1.6;
+  resize: none;
+  overflow-y: scroll;
+  border-radius: 5px;
+}
+
+#viewDiagnosisModal .viewDiag .diagAttatchment {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 25px;
+  padding-top: 25px;
+}
+
+#viewDiagnosisModal .viewDiag .diagAttatchment h5 {
+  text-transform: capitalize;
+}
+
+#viewDiagnosisModal .viewDiag .diagAttatchment h5 span {
+  margin-right: 10px;
+  color: #398bf7;
+}
+
+#viewDiagnosisModal .viewDiag .diagAttatchment img {
+  cursor: pointer;
+  width: 128px;
+  height: 128px;
+}
+
+#viewattatchModal .view-img .custom-button {
+  margin: auto;
+  margin-top: 25px;
+}
+
+#viewattatchModal .view-img .custom-button span {
+  margin-right: 15px;
+}
+
+#viewattatchModal .view-img img {
+  max-width: 100%;
+  display: block;
+}
+
+#DiagnosisModal .addDiagnosis textarea,
+#imgEditModal .addDiagnosis textarea {
+  padding: 15px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 150px;
+  line-height: 1.6;
+  resize: none;
+  overflow-y: scroll;
+  border-radius: 5px;
+}
+
+#DiagnosisModal .custom-upload,
+#imgEditModal .custom-upload {
+  display: flex;
+  flex-direction: column;
+}
+
+#DiagnosisModal #img-upload,
+#imgEditModal #img-upload {
+  visibility: hidden;
+}
+
+#DiagnosisModal .file-info,
+#imgEditModal .file-info {
+  background: #f8f8f8;
+  padding: 15px 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#DiagnosisModal .choose-button,
+#imgEditModal .choose-button {
+  border: none;
+  padding: 10px 20px;
+  margin: auto;
+  border-radius: 3px;
+  color: #fff;
+  background: #398bf7;
+}
+
+#DiagnosisModal .choose-button:focus,
+#imgEditModal .choose-button:focus {
+  outline: none;
+}
+
+#DiagnosisModal .uploaded-view,
+#imgEditModal .uploaded-view {
+  margin-top: 25px;
+  width: 200px;
+}
+
+#DiagnosisModal .uploaded-view img,
+#imgEditModal .uploaded-view img {
+  max-width: 100%;
+}
+
+#infoEditModal .user-profile-update {
+  padding: 20px;
+  height: 550px;
+  overflow-y: scroll;
+}
+
+#infoEditModal .user-profile-update .update-group {
+  margin-bottom: 25px;
+}
+
+#infoEditModal .user-profile-update .update-input {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all .5s;
+}
+
+#infoEditModal .user-profile-update .update-input:focus {
+  outline: none;
+  border: 1px solid #398bf7;
+}
+
+#infoEditModal .user-profile-update textarea {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all .5s;
+  height: 120px;
+  resize: none;
+}
+
+#infoEditModal .user-profile-update textarea:focus {
+  outline: none;
+  border: 1px solid #398bf7;
+}
+
+#infoEditModal .user-profile-update label {
+  cursor: pointer;
+}
+
+#infoEditModal .user-profile-update h5 {
+  color: #000;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
 /*bootstrap modal*/
 /*home page*/
 .main-wrapper {
@@ -1115,3 +1268,130 @@ div.dataTables_wrapper .dataTables_paginate span a:last-child {
 }
 
 /*home page*/
+/*user profile page*/
+.main-wrapper {
+  /*user profile page*/
+  /*user profile page*/
+}
+
+.main-wrapper .user-profile {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  background: #FFF;
+  border-radius: 3px;
+  padding: 20px;
+  /*photo*/
+  /*photo*/
+  /*name and edit*/
+  /*name and edit*/
+  /*profile info*/
+  /*perofile info*/
+  /*update popup*/
+  /*user about*/
+  /*user about*/
+}
+
+.main-wrapper .user-profile .profile-photo {
+  position: relative;
+  height: 272px;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
+.main-wrapper .user-profile .profile-photo .profile-operation {
+  position: absolute;
+  top: -100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(57, 139, 247, 0.5);
+  z-index: 1;
+  height: 272px;
+  cursor: pointer;
+  transition: top .5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-wrapper .user-profile .profile-photo .profile-operation span {
+  color: #FFF;
+  font-size: 50px;
+}
+
+.main-wrapper .user-profile .profile-photo:hover .profile-operation {
+  top: 0;
+}
+
+.main-wrapper .user-profile .profile-photo img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 272px;
+  transform: scale(1);
+  transition: transform .5s ease-in-out;
+}
+
+.main-wrapper .user-profile .profile-photo:hover img {
+  transform: scale(1.1);
+}
+
+.main-wrapper .user-profile .profile-name-edit {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.main-wrapper .user-profile .profile-name-edit .userFullName {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.main-wrapper .user-profile .profile-name-edit .edit button {
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  background: #398bf7;
+  color: #FFF;
+}
+
+.main-wrapper .user-profile .profile-name-edit .edit button:focus {
+  outline: none;
+}
+
+.main-wrapper .user-profile .user-profile-info .user-profile-info-labels span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  text-transform: capitalize;
+  color: #398bf7;
+  cursor: pointer;
+}
+
+.main-wrapper .user-profile .user-profile-info .user-profile-info-values span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  text-transform: capitalize;
+  color: #67757c;
+}
+
+.main-wrapper .user-profile .profile-about {
+  border-top: 1px solid #e8e8e8;
+  padding-top: 25px;
+  margin-top: 30px;
+}
+
+.main-wrapper .user-profile .profile-about h4 {
+  text-transform: capitalize;
+}
+
+.main-wrapper .user-profile .profile-about p {
+  line-height: 1.6;
+  color: #b1b1b1;
+}
+
+/*user profile page*/
