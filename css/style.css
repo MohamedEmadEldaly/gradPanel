@@ -1211,6 +1211,12 @@ div.dataTables_wrapper .dataTables_paginate span a:last-child {
 }
 
 /*bootstrap modal*/
+/*edit modal*/
+#editModal .datepicker3 {
+  margin-bottom: 15px;
+}
+
+/*edit modal*/
 /*home page*/
 .main-wrapper {
   background: #f4f6f9;
