@@ -197,6 +197,16 @@ $(document).ready(function () {
     $('#imgEditModal .choose-button').on('click', function (){
         $('#img-upload').click();
     });
+   
+    // global for all custom uploads
+    $('#img-upload').on('change', function (){
+
+        if($('#img-upload').val() != ""){
+            $('.file-info').html($(this).val());
+        } else {
+            $('.file-info').html('no file chosen yet!');
+        }
+    });
 
 
 
